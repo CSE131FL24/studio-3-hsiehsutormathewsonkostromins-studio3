@@ -20,14 +20,16 @@ public class Sieve {
 
 
 		for (int k = 2; k < n; k++) {
-			if(prime[k] == true) {
+			if(prime[k] == true) { //only compute multiples
 				for(int j = 2 * k; j < prime.length; j += k) {
 					prime[j] = false;
 				}
 			}
 		}
-		for (int p = 0; p < prime.length; p++) {
-				System.out.println(prime[p]);
+		for (int p = 2; p < prime.length; p++) {
+			if(prime[p] == true) {
+				System.out.println(p);
+			}
 		}
 		
 		
